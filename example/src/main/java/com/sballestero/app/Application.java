@@ -3,9 +3,11 @@ package com.sballestero.app;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
 @ComponentScan(basePackages={"com.sballestero.rest"})
+@EnableJpaRepositories(basePackages={"com.sballestero.repository"})
 /**
  * @SpringBootApplication es igual que poner:
  * 

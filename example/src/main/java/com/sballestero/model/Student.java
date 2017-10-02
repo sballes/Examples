@@ -1,13 +1,22 @@
 package com.sballestero.model;
 
 import java.io.Serializable;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 /**
  * Representa a un Alumno
  */
+@Entity
 public class Student implements Serializable{
 
-	private String id;
+	private static final long serialVersionUID = -1695046932692188062L;
+
+	@Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
+	private Long id;
 	
 	private String name;
 	
@@ -16,10 +25,10 @@ public class Student implements Serializable{
 	private String email;
 
 	// CONSTRUCTORS
-	public Student() {
+	protected  Student() {
 	}
 	
-	public Student(String id, String name, String surname, String email) {
+	public Student(Long id, String name, String surname, String email) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -28,11 +37,11 @@ public class Student implements Serializable{
 	}
 
 	// GETTER Y SETTERS
-	public String getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
